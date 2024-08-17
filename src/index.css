@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Poppins", sans-serif;
+  color-scheme: light dark;
+  --lilac-light: #c8a2c8;
+  --lilac-dark: #9370db;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-light); /* Default background for light mode */
+}
+
+/* General Background Styles */
+.bg-light {
+  background: linear-gradient(135deg, #f4e1f4, #c8a2c8); /* Light mode lilac background */
+}
+
+.bg-dark {
+  background: linear-gradient(135deg, #2c3e50, #1a1a1a); /* Dark mode background */
+}
+
+/* Button Effects */
+.button {
+  background: linear-gradient(45deg, var(--lilac-light), var(--lilac-dark));
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, var(--lilac-dark), var(--lilac-light));
+  transform: scale(1.05);
+}
+
+/* Glass Effect */
+.bg-glass {
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 12px;
+}
+
+.text-primary {
+  color: var(--text-dark); /* Dark text for light background */
+}
+
+.text-light {
+  color: var(--text-light); /* Light text for dark background */
+}
+
+/* Navbar */
+nav {
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent navbar */
+  backdrop-filter: blur(10px); /* Optional: Glass effect */
+  transition: background-color 0.3s ease;
+}
+
+nav.dark-mode {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark mode transparent background */
+}
+
+/* Section Styles */
+.card {
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.8); /* Light mode card background */
+}
+
+.card.dark-mode {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark mode card background */
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark footer background */
+}
+
+footer a {
+  color: var(--text-light); /* Footer link color */
+}
+
+footer a:hover {
+  color: var(--lilac-light); /* Hover effect for footer links */
+}
+
+/* Swiper Styles */
+.swiper-container {
+  position: relative;
+  padding: 2rem 0; /* Adjust for spacing */
+}
+
+.swiper-slide {
+  transition: transform 0.3s ease;
+  /* Ensure slides are the same size */
+  width: 37rem; /* Adjust width as needed */
+  height: auto; /* Let height adjust based on content */
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  transform: scale(0.9); /* Scale down non-active slides */
+}
+
+.swiper-slide-active {
+  transform: scale(1.05); /* Scale up the active slide */
+}
+
+/* Optional: Add some padding to the container for better spacing */
+.swiper-wrapper {
+  padding: 0 20px;
+}
+
+/* Text and Image Styling within Slides */
+.swiper-slide .text-content {
+  font-size: 1rem; /* Adjust font size */
+  text-align: center; /* Center text */
+  padding: 1rem; /* Add padding around text */
+}
+
+.swiper-slide img {
+  max-width: 100%; /* Ensure images fit within slides */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px; /* Adjust border radius */
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+/* Responsive Styles */
+@media (max-width: 500px) {
+  .swiper-container {
+    height: auto; /* Adjust height for mobile */
+  }
+
+  .swiper-slide {
+    width: 28rem; /* Adjust width for mobile */
+    height: auto; /* Adjust height for mobile */
+  }
+
+  .swiper-slide img {
+    width: 28rem; /* Adjust image width for mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 990px) {
+  .slider-controler .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+  
+  .slider-controler .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .slider-controler .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+  
+  .slider-controler .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+/* Logo 1: Move to the top right and then return */
+@keyframes move-and-return {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100px, -50px); /* Adjust to your layout */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-move-and-return {
+  animation: move-and-return 4s ease-in-out infinite; /* Customize duration */
+}
+
+/* Logo 2: Flip and Spin */
+@keyframes flip-and-spin {
+  0% {
+    transform: rotateY(0) rotate(0deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotate(180deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotate(360deg);
+  }
+}
+
+.animate-flip-and-spin {
+  animation: flip-and-spin 4s ease-in-out infinite; /* Customize duration */
+}
