@@ -15,3 +15,7 @@ Pricing Cards: The website includes a pricing card section with three different 
 Testimonials: User testimonials are displayed in a visually appealing format, built using Tailwind CSS. This section adds credibility and trust to the product.
 
 Footer: The footer section is also created using Tailwind CSS, providing users with additional information and navigation options.
+
+https://amazonfordigital.com/
+
+bouchmalaabesp@gmail.com
