@@ -6,8 +6,6 @@ Responsive Navbar: The website includes a fully responsive Navbar that adapts to
 
 Hero Section: The Hero section features a gradient text that adds a modern touch to the site. This section is designed to grab users' attention with a striking visual style.
 
-Video Integration: The website incorporates video elements using the <video> tag, with videos set to autoplay and loop, creating a dynamic and engaging user experience.
-
 Feature Section: A dedicated section to list all the features of the product, displayed in a clean and organized UI. This section helps users quickly understand the benefits of the product.
 
 Pricing Cards: The website includes a pricing card section with three different plans for users to choose from. This is designed to help users make informed decisions based on their needs.
